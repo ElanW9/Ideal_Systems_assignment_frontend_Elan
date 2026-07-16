@@ -1,23 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { Post } from '../api/posts';
-import { getPosts } from '../api/posts';
 
+interface PostsListProps {
+  posts: Post[];
+}
 
-export default function PostsList() {
-    const [posts, setPosts] = useState<Post[]>([]);
+export default function PostsList({ posts }: PostsListProps) {
+  const navigate = useNavigate();
 
-    useEffect(() => {
-       getPosts()
-         .then(setPosts)
-         .catch((error) => console.error(error));
-    }, []);
+  const viewPostDetail = (id: number) => {
+    navigate(`/posts/${id}`);
+  };
 
   return (
     <section id="postsList">
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <p >{post.title}</p>
+            <p>{post.title}</p>
+            <button onClick={() => viewPostDetail(post.id)}>View</button>
           </li>
         ))}
       </ul>

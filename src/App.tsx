@@ -7,7 +7,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PostsOverview />} />
+        <Route path="/posts/" element={<PostsOverview />} />
         <Route path="/posts/:id" element={<PostDetail />} />
       </Routes>
     </BrowserRouter>
