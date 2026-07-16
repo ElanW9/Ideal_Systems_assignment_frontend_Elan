@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import PostSearchBar from '../components/PostSearchBar';
 import PostsList from '../components/PostsList';
-import { getPosts } from '../api/posts';
 import type { Post } from '../api/posts';
+import { getPosts } from '../api/posts';
 
 export default function PostsOverview() {
   const [posts, setPosts] = useState<Post[]>([]);
