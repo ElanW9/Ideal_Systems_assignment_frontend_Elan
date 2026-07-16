@@ -39,7 +39,7 @@ export async function getPost (id: number): Promise<Post> {
 }
 
 /*Get comments for a specific post from API*/
-export async function getPostComments(postId: string): Promise<PostComments[]> {
+export async function getPostComments(postId: number): Promise<PostComments[]> {
   const response = await fetch(`${BASE_URL}/${postId}/comments`);
 
   if (!response.ok) {
