@@ -8,14 +8,19 @@ interface PostCommentsProps {
 
 export default function PostComments({ postId }: PostCommentsProps) {
   const [comments, setComments] = useState<PostComments[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!postId) return;
-
+    
+    setLoading(true);
     getPostComments(postId)
       .then(setComments)
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   }, [postId]);
+
+  if (loading) return <p>Loading comments...</p>;
 
   return (
     <section id="postComments">
