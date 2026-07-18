@@ -16,7 +16,7 @@ export default function PostsList({ posts }: PostsListProps) {
     <section id="postsList">
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>
+          <li key={post.id} className="post-item">
             <p>{post.title}</p>
             <button onClick={() => viewPostDetail(post.id)}>View</button>
           </li>

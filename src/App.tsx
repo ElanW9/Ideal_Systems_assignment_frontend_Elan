@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PostsOverview from './pages/PostsOverview';
 import PostDetail from './pages/PostDetail';
