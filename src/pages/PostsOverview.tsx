@@ -19,7 +19,7 @@ export default function PostsOverview() {
   );
 
   return (
-    <section id="postsOverview">
+    <section id="postsOverview" className="posts-overview-container">
       <PostSearchBar value={searchTerm} onChange={setSearchTerm} />
       <PostsList posts={filteredPosts} />
     </section>

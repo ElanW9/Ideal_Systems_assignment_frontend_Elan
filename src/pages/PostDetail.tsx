@@ -27,10 +27,12 @@ export default function PostDetail() {
   if (loading) return <p>Loading post details...</p>;
   
   return (
-    <div>
-      <button onClick={() => closePostDetail()}>Close</button>
-      {post && <PostInfo post={post} />}
-      {post &&<PostComments postId={postId} />}
+    <div className="modal-overlay" onClick={closePostDetail}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={closePostDetail}>Close</button>
+        {post && <PostInfo post={post} />}
+        {post &&<PostComments postId={postId} />}
+      </div>
     </div>
   );
 }
