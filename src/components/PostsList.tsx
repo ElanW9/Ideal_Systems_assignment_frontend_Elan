@@ -14,7 +14,7 @@ export default function PostsList({ posts }: PostsListProps) {
 
   return (
     <section id="postsList">
-      <ul>
+      <ul className="posts-grid">
         {posts.map((post) => (
           <li key={post.id} className="post-item">
             <p>{post.title}</p>
