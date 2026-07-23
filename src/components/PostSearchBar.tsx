@@ -6,6 +6,7 @@ interface PostSearchBarProps {
 export default function PostSearchBar({ value, onChange }: PostSearchBarProps) {
   return (
     <input
+      className="post-search-bar"
       type="text"
       value={value}
       onChange={(e) => onChange(e.target.value)}

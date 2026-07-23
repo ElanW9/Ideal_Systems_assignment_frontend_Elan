@@ -24,13 +24,15 @@ export default function PostDetail() {
 
   const closePostDetail = () => navigate('/');
 
-  if (loading) return <p>Loading post details...</p>;
+  if (loading) return <span className="loader"></span>;
   
   return (
-    <div>
-      <button onClick={() => closePostDetail()}>Close</button>
-      {post && <PostInfo post={post} />}
-      {post &&<PostComments postId={postId} />}
+    <div className="modal-overlay" onClick={closePostDetail}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={closePostDetail}>Close</button>
+        {post && <PostInfo post={post} />}
+        {post &&<PostComments postId={postId} />}
+      </div>
     </div>
   );
 }
