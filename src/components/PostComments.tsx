@@ -20,7 +20,7 @@ export default function PostComments({ postId }: PostCommentsProps) {
       .finally(() => setLoading(false));
   }, [postId]);
 
-  if (loading) return <p>Loading comments...</p>;
+  if (loading) return <span className="loader"></span>;
 
   return (
     <section id="postComments">

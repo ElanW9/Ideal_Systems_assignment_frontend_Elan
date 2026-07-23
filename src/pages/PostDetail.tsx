@@ -24,7 +24,7 @@ export default function PostDetail() {
 
   const closePostDetail = () => navigate('/');
 
-  if (loading) return <p>Loading post details...</p>;
+  if (loading) return <span className="loader"></span>;
   
   return (
     <div className="modal-overlay" onClick={closePostDetail}>

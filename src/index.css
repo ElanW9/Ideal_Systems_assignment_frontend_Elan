@@ -1,3 +1,4 @@
+/* created css for gradient background using https://cssgradient.io/*/
 body {
   background: #2a7b9b;
   background: linear-gradient(
@@ -161,4 +162,34 @@ body {
 
 .modal-close:hover {
   background: #b216af;
+}
+
+/*got the css for the spinner from following repo https://cssloaders.github.io/*/
+.loader {
+  --color-1: #fff;
+  --color-2: #b216af;
+  --size: 1px;
+
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border: calc(5 * var(--size)) solid var(--color-1);
+  border-bottom-color: var(--color-2);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  place-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
